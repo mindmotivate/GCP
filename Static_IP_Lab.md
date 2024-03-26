@@ -200,11 +200,11 @@ Initially, the instance did not have any specific IP address assigned. It is run
 ## The Results:
 ### In simple terms, you are seeing the following:
 
-1. **instance-1**: This instance is running in the us-central1-a zone and has an internal IP address of 10.128.0.2. It doesn't have an external IP address assigned. It is within the same VPC network.
+1. **instance-1**: It doesn't have an external IP address assigned. It can only be accessed internally within the network
 
-2. **instance-2**: Another instance also running in the us-central1-a zone. It has an internal IP address of 10.128.0.3 and an external IP address of 35.209.191.158. This instance is directly accessible from the internet.
+2. **instance-2**: This instance is directly accessible from the internet.
 
-3. **instance-3**: This instance, also in the us-central1-a zone, has an internal IP address of 10.128.0.4 and an external IP address of 35.208.169.144. This instance is directly accessible from the internet.
+3. **instance-3**: This instance is directly accessible from the internet.
 
 ***Note: External IP addresses are not mandatory for every VM instance because not all instances require direct access from the internet. 
  **Internal Communication**: Many VM instances within a cloud environment need to communicate with each other or with other resources within the same Virtual Private Cloud (VPC) network. In such cases, internal IP addresses are sufficient for communication, and external IP addresses are unnecessary.
