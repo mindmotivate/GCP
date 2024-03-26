@@ -270,22 +270,44 @@ notice how th rulle are created for the "auto-vpc" (4)  and the "default-vpc" (6
 ![image](https://github.com/mindmotivate/GCP/assets/130941970/9f56b5ad-f107-444a-8d44-9459effd5018)
 
 
-# The fire wall rules of rthe default vpc allow SSH
+### The fire wall rules of rthe default vpc allow SSH
 ![image](https://github.com/mindmotivate/GCP/assets/130941970/6d83919a-1173-40b4-ba99-6bf7c7e15775)
 
 ![image](https://github.com/mindmotivate/GCP/assets/130941970/47011ff0-0732-49cb-ab06-59e0a7f90253)
 
 
 
-# To address the problem , lets add a fire wall rule to the custom vpc
+### To address the problem , lets add a fire wall rule to the custom vpc
 ![image](https://github.com/mindmotivate/GCP/assets/130941970/ecf58e24-a11f-4ae3-ab0f-e97bd7e9ef2f)
 
-# wew ill add an ingress rule that is higher priorty than 65535 (we will call it "allow-ssh""
+### wew ill add an ingress rule that is higher priorty than 65535 (we will call it "allow-ssh""
 
 ![image](https://github.com/mindmotivate/GCP/assets/130941970/490e6372-2b7f-4235-bc72-184c5347544d)
 
-3 dont forget ot apply it to all intances in the network
+### dont forget ot apply it to all intances in the network
 ![image](https://github.com/mindmotivate/GCP/assets/130941970/70cc02d4-89df-442d-8dc9-23e1fb381480)
+
+
+### If wed like to cusotmize these firewal ruels a bit
+In tis custom rule we will CREATEA SOURCE FILTER TO: allow the entire internet to acces sourinstancce (NOT A GOOD IDE!)
+AND WE WIL CREATE ASECOND SOURCE FILTER TO ALLOW SSH TRAFFIC VIA TCP 
+![image](https://github.com/mindmotivate/GCP/assets/130941970/56279ddc-697c-4115-8b40-52322ce7015b)
+
+
+
+CLICK "cREATE"
+
+HERE IS OUR NEW FIREWALL RULE:
+![image](https://github.com/mindmotivate/GCP/assets/130941970/2bd72bdc-7fee-4d23-9176-bc80c51bb2c4)
+
+
+lET SESE F WE CAN ACCESS OUR CUSTOM VM NOW VIA SSH?
+
+##sUCCESS!!
+![image](https://github.com/mindmotivate/GCP/assets/130941970/0ac69588-e317-499d-95a3-34ccfc53ee37)
+
+
+
 
 # Creating a New Project and Default VPC Network in GCP with gcloud cli
 
@@ -310,7 +332,8 @@ gcloud services list --enabled
 ```
 
 ```bash
-gcloud services enable compute.googleapis.com
+gcloud components install config-connector
+
 ```
 
 ```bash
@@ -318,19 +341,23 @@ gcloud projects create PROJECT_NAME
 ```
 
 ```bash
-PROJECT_NUMBER=$(gcloud projects list --filter="name:PROJECT_NAME" \
-  --format="value(projectNumber)")
+$ gcloud projects add-iam-policy-binding vernal-maker-416701 \
+  --member=serviceAccount:665443357168-compute@developer.gserviceaccount.com \
+  --role=roles/servicenetworking.serviceAgent
 
-gcloud compute networks create VPC_NAME \
-  --project=$PROJECT_NUMBER \
-  --regions REGION1,REGION2,...  # Replace with desired regions
-```
+gcloud projects add-iam-policy-binding vernal-maker-416701 \
+  --member=serviceAccount:665443357168-compute@developer.gserviceaccount.com \
+  --role=roles/storage.objectAdmin
 
 
+$ gcloud beta resource-config bulk-export --resource-format=terraform --project=vernal-maker-416701
 
 
 
 # Creating a New Project and Default VPC Network in Terraform
+
+gcloud beta resource-config bulk-export --resource-format=terraform --project=vernal-maker-416701
+sudo apt-get install google-cloud-cli-config-connector
 
 ```hcl
 
