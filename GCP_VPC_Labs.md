@@ -127,19 +127,18 @@ Click "Create"
 Here is our new firewall rule:
 ![New Firewall Rule](https://github.com/mindmotivate/GCP/assets/130941970/2bd72bdc-7fee-4d23-9176-bc80c51bb2c4)
 
-Let's see if we can access our custom VM now via SSH?
+
+***Lets' Create another for RDP!***
+
+![image](https://github.com/mindmotivate/GCP/assets/130941970/0f071c2b-3870-4605-8916-9c12e9932f42)
+
+![image](https://github.com/mindmotivate/GCP/assets/130941970/7d45da0b-b881-45cf-b1fb-7e8faf0d88e4)
+
+![image](https://github.com/mindmotivate/GCP/assets/130941970/b850b173-a4ee-4443-8104-06d560f709e9)
+
+![image](https://github.com/mindmotivate/GCP/assets/130941970/2c4c901f-b438-46d3-8fef-d3212dcf1d77)
+
+***Let's see if we can access our custom VM now?***
 
 ## Success!!
 ![SSH Access to Custom VM](https://github.com/mindmotivate/GCP/assets/130941970/0ac69588-e317-499d-95a3-34ccfc53ee37)
-
----
-
-# Creating a New Project and Default VPC Network in GCP with gcloud cli
-
-Outline the steps for creating a new project and default VPC using gcloud commands.
-
----
-
-# Creating a New Project and Default VPC Network in Terraform
-
-Provide Terraform code for creating a project and default VPC network.
