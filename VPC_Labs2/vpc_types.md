@@ -1,3 +1,29 @@
+# Network / Cloud
+A network, in its simplest form, is a collection of interconnected devices (such as computers, servers, printers, etc.) that can communicate with each other. This communication can happen within a local area (LAN), like in a home or office, or over a larger geographical area (WAN), such as connecting different office branches across a city or country.
+
+An IP (Internet Protocol) address is a unique identifier assigned to each device connected to a computer network. It's like a digital address that helps data find its way to the right destination on the internet or within a local network.
+
+RFC 1918 defines certain ranges of IP addresses that are reserved for private networks, which means they're not routable over the internet. These reserved ranges are:
+
+***10.0.0.0 - 10.255.255.255***
+
+***172.16.0.0 - 172.31.255.255***
+
+***192.168.0.0 - 192.168.255.255***
+
+A subnet in a VPC is a way to divide your network into smaller, manageable parts. It's defined by a CIDR (Classless Inter-Domain Routing) block, which specifies the range of IP addresses available to devices within that subnet. This helps in organizing and efficiently using IP addresses within your VPC while also providing segmentation for security and management purposes.
+
+In Google Cloud Platform (GCP), think of a network as the foundation that connects all your resources together, like how roads connect different parts of a city. Without roads, you can't reach your destination. Similarly, without a network in GCP, your resources, like virtual machines or databases, can't communicate with each other or with the outside world.
+
+So, when you create a resource in GCP, like a virtual machine, it needs to be part of a network to function properly. This network provides the pathways for data to travel between your resources, ensuring they can talk to each other and to the internet if needed.
+
+
+**Default VPC:** When you create a project in GCP, a default VPC is automatically created for you. It's a simple setup suitable for getting started quickly. It comes with a predefined set of firewall rules that allow outbound connections and deny incoming connections, providing basic security.
+
+**Auto Mode VPC:** This model provides more flexibility compared to the default VPC. It allows for automatic subnet creation, which means you don't have to worry about managing IP addresses manually. Google Cloud automatically creates and manages subnets for you, making it easier to scale your infrastructure.
+
+**Custom Mode VPC:** This is the most flexible option, allowing you to have complete control over your VPC configuration. You can define your own IP ranges, subnets, and firewall rules to tailor the network setup according to your specific requirements. This model is suitable for complex network architectures and advanced networking scenarios.
+
 # Default VPC:
 - **Description**: When you create a new project in GCP, a default VPC is automatically provisioned for you. It's a ready-to-use VPC with default settings that allow you to quickly deploy resources without additional configuration.
 - **Subnets**: By default, a default VPC includes one subnet in each region where resources can be deployed. These subnets are created with predefined IP ranges.
