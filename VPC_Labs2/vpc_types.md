@@ -135,6 +135,7 @@ When setting up an Auto Mode VPC in Google Cloud Platform (GCP), you'll encounte
 
 This setup simplifies the process of managing network security within your Auto Mode VPC, providing flexibility to accommodate different use cases while ensuring a baseline level of protection.
 
+***After making your selection, select the "create" button***
 
 
 
@@ -145,8 +146,7 @@ This setup simplifies the process of managing network security within your Auto 
 
 
 
-
-### Custom Mode VPC:
+## Custom Mode VPC:
 - Go to the VPC network page in the GCP Console.
 - Click "Create VPC network".
 - Choose "Custom mode" for the VPC network mode.
