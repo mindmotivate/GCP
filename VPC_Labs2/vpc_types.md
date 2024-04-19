@@ -138,37 +138,24 @@ This setup simplifies the process of managing network security within your Auto 
 ***After making your selection, select the "create" button***
 
 
-
-
-
-
-
-
-
-
 ## Custom Mode VPC:
 - Go to the VPC network page in the GCP Console.
 - Click "Create VPC network".
 - Choose "Custom mode" for the VPC network mode.
+  
+![image](https://github.com/mindmotivate/GCP/assets/130941970/95c60c25-e1b8-472a-a3a6-6632bad53f48)
+
 - Specify a name for the VPC network and click "Create".
 - To create subnets, go to the VPC network details page and click "Add subnet".
 - Enter subnet details such as name, region, and IP range, and click "Create".
+- 
+![image](https://github.com/mindmotivate/GCP/assets/130941970/12c2f79a-eba6-43ff-aa69-0c97afc4d5a5)
 
+![image](https://github.com/mindmotivate/GCP/assets/130941970/39ade4fe-2f8a-4ece-83f4-5442df1fcc75)
+
+### Firewall Rules:
 For firewall policies, you can navigate to the Firewall section within the VPC network page in the GCP Console to create and manage firewall rules for each VPC.
 
-
-
-
-
-
-### Auto Mode VPC & Custom Mode VPC:
-1. **Access Firewall Rules**:
-   - Follow steps 1-2 above.
-2. **Create Firewall Rules**:
-   - Repeat steps 3-6 above to create firewall rules for SSH, RDP, HTTP/HTTPS, and ICMP.
-  
-
-### Custom Mode VPC:
 1. **Access Firewall Rules**: 
    - Navigate to the VPC Network page in the GCP Console.
    - Click on "Firewall" in the left-hand menu.
@@ -187,6 +174,12 @@ For firewall policies, you can navigate to the Firewall section within the VPC n
    - Repeat the same process, but specify `tcp:80` and `tcp:443` for HTTP and HTTPS, respectively.
 6. **Define Rule for ICMP**:
    - Repeat the same process, but specify `icmp` for ICMP traffic.
+
+
+
+
+
+
 
 
 
